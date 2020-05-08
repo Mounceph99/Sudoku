@@ -43,7 +43,7 @@ def force_delay():
 # This function will initialize the board to zeros
 def initialize_empty_sudoku_board():
     for i in range(0,9**2):            
-            sudoku_board.append(0)
+            sudoku_board.append(i)
 
 # Initializes board to a sudoku game, found online
 def init_board():
@@ -234,6 +234,9 @@ print_sudoku_board()
 #print("A visualization of the solution will start in 2 seconds")
 #sleep(2)
 #solve_sudoku()
+sleep(4)
+init(convert = True)
+print(Fore.BLUE + "Mounceph")
 
 
 
