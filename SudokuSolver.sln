@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SudokuSolver", "SudokuSolver\SudokuSolver.pyproj", "{8CB0B317-34AF-4FBD-B257-E3D0A920BC17}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SudokuSolver", "SudokuSolver\SudokuSolver.pyproj", "{F682E9D0-7B38-48F1-A389-CF158CDCC7A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CB0B317-34AF-4FBD-B257-E3D0A920BC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CB0B317-34AF-4FBD-B257-E3D0A920BC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F682E9D0-7B38-48F1-A389-CF158CDCC7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F682E9D0-7B38-48F1-A389-CF158CDCC7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ACCE806E-3807-4821-BDEA-EAB5825BADD2}
+		SolutionGuid = {44A715D4-F0B4-428F-A195-C3A578F6DB28}
 	EndGlobalSection
 EndGlobal
