@@ -9,6 +9,10 @@
 # Import floor function from math 
 from math import floor
 
+# Import random package to generate random values and initialize number generator
+from random import seed, randint, shuffle, choice
+seed()
+
 # Import os package to clear sceen
 from os import system, name
 
@@ -43,6 +47,13 @@ def cls():
 # for better visualization
 def force_delay():
     sleep(0.01)
+
+# This function initializes an empty board of sudoku
+def init_empty():
+    empty_board = []
+    for i in range(0,81):
+        empty_board.append(0)
+    return empty_board
 
 # This function will initialize the board to an unsovable
 # board, this function is only used fro testing purposes
@@ -254,23 +265,106 @@ def solve_sudoku():
 
     # Backtracking occurs
     return False
+
+# This function will generate a a solvable sudoku board ramdomly
+# How to proceed: 
+# User  will enter difficulty between "easy", "normal" "hard", number of slots filled 
+#   changes with difficulty: [25,30], [15,20], [8,12] respectively
+# Ramdomly will generate moves on an empty board, once all moves, if board is valid, return board
+#   Else restart
+def generate_board(difficulty = "normal"):
+    # Initialize empty board
+    sudoku_board = init_empty()
+    # Get difficulty multiplier and save a backup
+    multiplier = difficulty_multiplier(difficulty)
+    temp_multiplier = difficulty_multiplier
+    # Flag to leave while loop when there is a valid sudoku board
+    done_board = False
+    # Loop counter such that if it takes too long to generate a board,
+    # default to predetermined board
+    excess_counter = 0
+
+
+    # Loop until the board is fully generated
+    while not done_board:
+
+        #Randomly generate positions and moves and test them, if it works update 
+        #board
+        while True:
+            
+            pos = position_generator()
+            move = move_generator()
+            print("EC: " + str(excess_counter) + ", pos: " + str(pos) + ", move: " + str(move))
+            if sudoku_board[pos] == 0 and isValidMove(pos,move):
+                update_board(pos,move)
+                break
+
+        #Succesfully added a move, decrease counter
+        temp_multiplier = temp_multiplier - 1
+        
+        #Once all moves are on the board, this changes according to difficulty
+        # check if board is valid, and if so return board
+        # Else, restart from scratch
+        if temp_multiplier < 1:
+            if solve_sudoku():
+                done_board = True
+            else:
+                #Reinit values
+                temp_multiplier = multiplier
+                game_board = init_empty()
+        #Excess iterations forces a predetermined board
+        if excess_counter > 1500:
+            initialize_board_predetermined()
+            return sudoku_board
+        excess_counter = excess_counter + 1
+        print(excess_counter)
+
+    return sudoku_board
+
+# This function will return randomly a value between 0 and 80 inclusive
+# which is the size of a 9x9 sudoku
+def position_generator():
+    return randint(0,80)
+
+# This function will return randomly a value between 1 and 9 inclusive
+# which are the moves permitted in a 9x9 sudoku
+def move_generator():
+    return randint(1,9)
+
+# This function returns the number of sudoku moves a board will start with
+# depending on difficulty passed
+def difficulty_multiplier(difficulty):
+    
+    if difficulty.lower() == "easy":
+        return choice(range(25,31))
+    elif difficulty.lower() == "normal":
+        return choice(range(15,21))
+    elif difficulty.lower() == "hard":
+        return choice(range(8,13))
+    else:
+        print("ERROR: Difficulty parameter is not within permitted choices")
+        exit()
+    
    
-
-  
-
 ################################################
 # Main body section
 ################################################
 
 
 
-init_board()
-#initialize_board_no_solution()
+#initialize_board_predetermined()
+##initialize_board_no_solution()
+#print_sudoku_board(sudoku_board)
+#if solve_sudoku():
+#    print_sudoku_board(solution_board)
+#else:
+#    print("NO SOLUTION TO THIS BOARD")
+
+#print_sudoku_board(generate_board())
+
+sudoku_board = generate_board()
 print_sudoku_board(sudoku_board)
-if solve_sudoku():
-    print_sudoku_board(solution_board)
-else:
-    print("NO SOLUTION TO THIS BOARD")
+
 
 
 
