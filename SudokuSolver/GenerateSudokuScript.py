@@ -20,9 +20,9 @@ for level in list_lvl:
     filename = level.capitalize() + "Sudoku.txt"
     sudokuFile = open(filename, "a")
             
-     #Generate 15 Sudokus for the current level and store the board and solution
+     #Generate 5 Sudokus for the current level and store the board and solution
      #in its file
-    for i in range(0,15):
+    for i in range(0,5):
         result = init_board(lvl = level, generating = True)
         game = result[0].copy()
         sol = result[1].copy()
