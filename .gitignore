@@ -10,3 +10,6 @@ ENV/
 env.bak/
 venv.bak/
 
+SudokuSolver/EasySudoku.txt
+SudokuSolver/HardSudoku.txt
+SudokuSolver/NormalSudoku.txt
