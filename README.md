@@ -13,9 +13,8 @@ Note: Make sure to have clone the repo
 
 1. Open SudokuGUI.exe. Found in folder SudokuSolver
 2. Once the Sudoku GUI is open, select a level.
-3. Press on a tile to increment the tile's move to 1.
-  3.1. Press X amount of times, to have desired move.
-  3.2. To reset tile to an empty tile, simply press on tile when it is at 9
-4. Repeat the 3 for all none given tiles.
+3. Press on a tile to increment the tile's move to 1. Press X amount of times, to have desired move. To reset tile to an empty tile, simply press on tile when it is at 9.
+  
+4. Repeat step 3 for all none given tiles.
 5. Solve the Sudoku!!! Have fun ;)
 6. Play again!!!
