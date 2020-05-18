@@ -13,7 +13,7 @@ This program generates its own Sudoku and randomly generating filling up the Sud
 Function: https://github.com/Mounceph99/Sudoku/blob/2aee1ce046cb6c56c4acf2036fadbcdd4e7e135a/SudokuSolver/SudokuSolver.py#L260
 
 ## How to play
-Note: Make sure to have clone the repo
+Note: Make sure to have cloned the repo
 
 1. Open SudokuGUI.exe. Found in folder SudokuSolver
 2. Once the Sudoku GUI is open, select a level.
